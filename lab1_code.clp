@@ -43,11 +43,18 @@
 )
 
 
-(defrule none_with_personal_trait1_has_personal_trait2
+(defrule none_with_personal_trait1_has_personal_trait2_normal
 	(personal_trait ?personal_trait1)
 	(personal_trait ?personal_trait2)
 	(no_persons_share_personal_traits ?personal_trait1 ?personal_trait2)
 	=>
 	(assert (none_with_personal_trait1_has_personal_trait2 ?personal_trait1 ?personal_trait2))
+)
+
+(defrule none_with_personal_trait1_has_personal_trait2_reverse
+	(personal_trait ?personal_trait1)
+	(personal_trait ?personal_trait2)
+	(no_persons_share_personal_traits ?personal_trait1 ?personal_trait2)
+	=>
 	(assert (none_with_personal_trait1_has_personal_trait2 ?personal_trait2 ?personal_trait1))
 )

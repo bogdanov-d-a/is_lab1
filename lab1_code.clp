@@ -10,6 +10,9 @@
 (defrule initial-fact-driver-0006 (initial-fact) => (assert (at_least_one_with_personal_trait1_has_relative_trait2_with_any_with_personal_trait3 mentor respect programmer)))
 (defrule initial-fact-driver-0007 (initial-fact) => (assert (all_with_personal_trait1_has_relative_trait2_with_any_with_personal_trait3 mentor lack_of_respect slacker)))
 
+(defrule initial-fact-driver-0008 (initial-fact) => (assert (personal_trait_programmer programmer)))
+(defrule initial-fact-driver-0009 (initial-fact) => (assert (personal_trait_slacker slacker)))
+
 
 (defrule opposite_relative_traits_commutativity
 	(relative_trait ?a)
@@ -57,4 +60,17 @@
 	(no_persons_share_personal_traits ?personal_trait1 ?personal_trait2)
 	=>
 	(assert (none_with_personal_trait1_has_personal_trait2 ?personal_trait2 ?personal_trait1))
+)
+
+
+(defrule lab1_proof_goal_reached
+	(personal_trait ?personal_trait1)
+	(personal_trait_programmer ?personal_trait1)
+	(personal_trait ?personal_trait2)
+	(personal_trait_slacker ?personal_trait2)
+	(none_with_personal_trait1_has_personal_trait2 ?personal_trait1 ?personal_trait2)
+	=>
+	(assert (lab1_proof_goal_reached))
+	(printout t "No one with " ?personal_trait1 " trait have " ?personal_trait2 " trait." crlf)
+	(printout t "Proof goal reached. See facts window for additional information." crlf)
 )

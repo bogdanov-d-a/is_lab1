@@ -6,12 +6,14 @@
 (defrule initial-fact-driver-0004 (initial-fact) (not (lab1_proof_goal_reached)) => (assert (relative_trait lack_of_respect)))
 
 (defrule initial-fact-driver-0005 (initial-fact) (not (lab1_proof_goal_reached)) => (assert (opposite_relative_traits respect lack_of_respect)))
+(defrule initial-fact-driver-0006 (initial-fact) (not (lab1_proof_goal_reached)) => (assert (opposite_relative_traits lack_of_respect respect)))
 
-(defrule initial-fact-driver-0006 (initial-fact) (not (lab1_proof_goal_reached)) => (assert (at_least_one_with_personal_trait1_has_relative_trait2_with_any_with_personal_trait3 mentor respect programmer)))
-(defrule initial-fact-driver-0007 (initial-fact) (not (lab1_proof_goal_reached)) => (assert (all_with_personal_trait1_has_relative_trait2_with_any_with_personal_trait3 mentor lack_of_respect slacker)))
+(defrule initial-fact-driver-0007 (initial-fact) (not (lab1_proof_goal_reached)) => (assert (at_least_one_with_personal_trait1_has_relative_trait2_with_any_with_personal_trait3 mentor respect programmer)))
+(defrule initial-fact-driver-0008 (initial-fact) (not (lab1_proof_goal_reached)) => (assert (all_with_personal_trait1_has_relative_trait2_with_any_with_personal_trait3 mentor lack_of_respect slacker)))
 
-(defrule initial-fact-driver-0008 (initial-fact) (not (lab1_proof_goal_reached)) => (assert (personal_trait_programmer programmer)))
-(defrule initial-fact-driver-0009 (initial-fact) (not (lab1_proof_goal_reached)) => (assert (personal_trait_slacker slacker)))
+(defrule initial-fact-driver-0009 (initial-fact) (not (lab1_proof_goal_reached)) => (assert (personal_trait_mentor mentor)))
+(defrule initial-fact-driver-0010 (initial-fact) (not (lab1_proof_goal_reached)) => (assert (personal_trait_programmer programmer)))
+(defrule initial-fact-driver-0011 (initial-fact) (not (lab1_proof_goal_reached)) => (assert (personal_trait_slacker slacker)))
 
 
 (defrule opposite_relative_traits_commutativity
